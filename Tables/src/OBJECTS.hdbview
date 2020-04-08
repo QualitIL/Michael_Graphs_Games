@@ -1,0 +1,4 @@
+view "Michael_Graphs_Games.Tables::OBJECTS" as 
+select distinct 'U' || '_' || UNIT OBJECT_ID, 'Unit' OBJECT_TYPE from "Michael_Graphs_Games.Tables::UNITS"
+union
+select distinct 'E' || '_' || EMPLOYEE OBJECT_ID, 'Employee' OBJECT_TYPE from "Michael_Graphs_Games.Tables::UNITS"

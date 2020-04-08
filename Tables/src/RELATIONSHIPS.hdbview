@@ -1,0 +1,1 @@
+view "Michael_Graphs_Games.Tables::RELATIONSHIPS" as select EMPLOYEE || '_' || DATEFROM RELATIONSHIP_ID, 'Works' as RELATIONSHIP_TYPE, 'E' || '_' || EMPLOYEE EMPLOYEE, 'U' || '_' || UNIT UNIT, DATEFROM, DATETO from "Michael_Graphs_Games.Tables::UNITS";

@@ -1,0 +1,9 @@
+graph workspace "Michael_Graphs_Games.Tables::UNITS_GRAPH"
+edge table "Michael_Graphs_Games.Tables::RELATIONSHIPS"
+source column "EMPLOYEE"
+target column "UNIT"
+key column "RELATIONSHIP_ID"
+
+vertex table "Michael_Graphs_Games.Tables::OBJECTS"
+key column "OBJECT_ID"
+;
