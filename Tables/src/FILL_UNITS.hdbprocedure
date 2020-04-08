@@ -1,0 +1,43 @@
+PROCEDURE "Michael_Graphs_Games.Tables::FILL_UNITS" LANGUAGE SQLSCRIPT AS
+
+BEGIN
+
+DECLARE emp_count INTEGER;
+
+DECLARE unit NVARCHAR(8);
+
+DECLARE number_of_units INTEGER;
+
+DECLARE datefrom DATE;
+
+DECLARE dateto DATE;
+
+DECLARE cont INT; 
+
+number_of_units = 5;
+
+FOR emp_count IN 1 .. 20 DO
+
+		datefrom = '1980-01-01';
+		
+		datefrom = add_days(datefrom, FLOOR(35*365*Rand()+1));
+
+		cont = 1;
+
+		WHILE cont = 1 DO
+
+			unit = FLOOR(number_of_units*Rand()+1);
+			
+			dateto = add_days(datefrom, FLOOR(4*365*Rand()+1));
+	
+			INSERT INTO "Michael_Graphs_Games.Tables::UNITS" VALUES(emp_count,datefrom,dateto,unit);
+			
+			datefrom = add_days(dateto, 1);
+			
+			cont = FLOOR(2*Rand());
+	
+		END WHILE;
+	
+END FOR;
+
+END;

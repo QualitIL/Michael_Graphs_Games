@@ -1,0 +1,19 @@
+ID: Michael_Graphs_Games
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: Tables
+   type: hdb
+   path: Tables
+   requires:
+    - name: hdi_Tables
+
+resources:
+ - name: hdi_Tables
+   parameters:
+      config:
+         schema: GRAPH_DB
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
